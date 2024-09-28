@@ -94,7 +94,7 @@ export interface Room {
 
 const defaultRoom = {
   style: 'none',
-  type: 'common'
+  type: 'none'
 }
 
 export const createRoom = (data: Partial<Room>) => {
