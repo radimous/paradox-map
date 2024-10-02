@@ -18,7 +18,8 @@ onMounted(() => {
     zoomDoubleClickSpeed: 1,
     onTouch: function () {
       return false
-    }
+    },
+    autocenter: true
   })
 })
 

@@ -2,13 +2,17 @@
   <header class="app-header">
     <h1 class="logo">P<span class="letters">aradox</span>M<span class="letters">ap</span></h1>
     <VaultName />
-    <VaultMenu />
+    <div style="display: flex">
+      <DarkToggleButton />
+      <VaultMenu />
+    </div>
   </header>
 </template>
 
 <script setup>
 import VaultName from '@/components/layout/VaultName.vue'
 import VaultMenu from '@/components/layout/VaultMenu.vue'
+import DarkToggleButton from '@/components/layout/DarkToggleButton.vue'
 </script>
 
 <style scoped>

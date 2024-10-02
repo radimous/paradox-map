@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+/*prevent accidental refresh on mobile*/
+html,
+body {
+  overscroll-behavior: none;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -13,8 +19,14 @@ body {
   background: white;
   display: flex;
   font-family: 'Outfit', sans-serif;
+  fill: black;
 }
 
 button, input, select, option {
   font-family: inherit;
+}
+
+.pan-zoom {
+  height: min-content;
+  width: min-content;
 }

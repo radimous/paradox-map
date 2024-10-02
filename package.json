@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.17",
+    "darkreader": "^4.9.75",
     "deepmerge": "^4.3.1",
     "nanoid": "^5.0.4",
     "panzoom": "^9.4.3",
