@@ -29,7 +29,7 @@
       <span class="god-name" v-if="god">
         {{ god }}
       </span>
-      <ModifierIcon v-if="roomImages && props.item.type  && props.item.type != 'none'" :name="props.item?.type" style="height:64px; width:64px" />
+      <ModifierIcon v-if="roomImages && props.item.type  && props.item.type != 'none' && props.item.type != 'common' " :name="props.item?.type" style="height:64px; width:64px" />
       <span class="room-name" v-if="name && !roomImages">
         {{ name }}
       </span>
