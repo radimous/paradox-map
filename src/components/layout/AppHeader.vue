@@ -3,6 +3,8 @@
     <h1 class="logo">P<span class="letters">aradox</span>M<span class="letters">ap</span></h1>
     <VaultName />
     <div style="display: flex">
+      <GodNamesToggle />
+      <RoomImageToggle />
       <DarkToggleButton />
       <VaultMenu />
     </div>
@@ -13,6 +15,8 @@
 import VaultName from '@/components/layout/VaultName.vue'
 import VaultMenu from '@/components/layout/VaultMenu.vue'
 import DarkToggleButton from '@/components/layout/DarkToggleButton.vue'
+import RoomImageToggle from '@/components/layout/RoomImageToggle.vue'
+import GodNamesToggle from '@/components/layout/GodNamesToggle.vue'
 </script>
 
 <style scoped>
