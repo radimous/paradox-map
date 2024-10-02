@@ -36,7 +36,7 @@ const toggle = () => {
   width: 24px;
   height: 24px;
   transition: transform 0.2s;
-  margin: var(--spacing-100) var(--spacing-400);
+  margin: var(--spacing-100) min(var(--spacing-200), 1vw);
   &:hover {
     transform: scale(1.2);
   }

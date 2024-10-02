@@ -44,7 +44,9 @@ isDarkMode.value ? enableDarkMode() : disableDarkMode()
   width: 24px;
   height: 24px;
   transition: transform 0.2s;
-  margin: var(--spacing-100) var(--spacing-400);
+  margin-right: min(var(--spacing-400), 1vw);
+  margin-top: var(--spacing-100);
+  margin-left: min(var(--spacing-200), 1vw);
   &:hover {
     transform: scale(1.2);
   }

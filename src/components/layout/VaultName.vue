@@ -25,7 +25,8 @@ const setName = (e) => {
   font-size: 1rem;
   transition: box-shadow 0.24s ease;
   background: #f6f6f6;
-  width: 200px;
+  max-width: 200px;
+  min-width: 50px;
 
   &:focus {
     outline: none;
