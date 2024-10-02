@@ -1,11 +1,11 @@
 import { defineStore } from 'pinia'
 import { save, get } from '@/util/save'
 
-// roomImages is bool
-export const roomImagesStore = defineStore('roomImages', {
+export const gridOptsStore = defineStore('gridOpts', {
 	state: () => {
 		return {
-			roomImages: get('roomImages') ?? false
+			roomImages: get('roomImages') ?? false,
+      		godNames: get('godNames') ?? true
 		}
 	},
 	actions: {
@@ -13,6 +13,9 @@ export const roomImagesStore = defineStore('roomImages', {
 			this.roomImages = !this.roomImages
 				save('roomImages', this.roomImages)
 			},
+		toggleGodNames() {
+			this.godNames = !this.godNames
+			save('godNames', this.godNames)
 		}
 	}
-)
+})

@@ -56,7 +56,7 @@ import ConnectionTunnel from '@/components/GridItem/ConnectionTunnel.vue'
 import ConnectionModifiers from '@/components/GridItem/ConnectionModifiers.vue'
 import { useEditingStore } from '@/stores/editing'
 import { useGridStore } from '@/stores/grid'
-import { roomImagesStore } from '@/stores/roomimages'
+import { gridOptsStore } from '@/stores/gridopts'
 
 const props = defineProps({
   item: {
@@ -75,11 +75,11 @@ const props = defineProps({
 
 const store = useEditingStore()
 const grid = useGridStore()
-const roomImagesS = roomImagesStore()
+const gridOpts = gridOptsStore()
 
 
 const roomImages = computed(() => {
-  return roomImagesS.roomImages
+  return gridOpts.roomImages
 })
 
 const isActive = computed(() => {
@@ -117,6 +117,9 @@ const setActive = () => {
 const directions = ['north', 'east', 'south', 'west']
 
 const god = computed(() => {
+  if (!gridOpts.godNames){
+    return null
+  }
   const label = GOD_LABELS[props.item?.style]
 
   return label ?? null

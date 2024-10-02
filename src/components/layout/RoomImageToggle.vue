@@ -28,15 +28,15 @@
   </svg>
 </template>
 <script setup>
-import { roomImagesStore } from '@/stores/roomimages'
+import { gridOptsStore } from '@/stores/gridopts'
 import { computed } from 'vue'
 
-const ris = roomImagesStore()
+const gridOpts = gridOptsStore()
 const roomImages = computed(() => {
-  return ris.roomImages
+  return gridOpts.roomImages
 })
 const toggle = () => {
-  ris.toggleRoomImages()
+  gridOpts.toggleRoomImages()
 }
 
 </script>
