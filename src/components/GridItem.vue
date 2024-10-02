@@ -29,7 +29,8 @@
       <span class="god-name" v-if="god">
         {{ god }}
       </span>
-      <span class="room-name" v-if="name">
+      <ModifierIcon v-if="roomImages && props.item.type  && props.item.type != 'none'" :name="props.item?.type" style="height:64px; width:64px" />
+      <span class="room-name" v-if="name && !roomImages">
         {{ name }}
       </span>
       <span class="modifiers" v-if="item.purchased && modifiers">
@@ -55,6 +56,7 @@ import ConnectionTunnel from '@/components/GridItem/ConnectionTunnel.vue'
 import ConnectionModifiers from '@/components/GridItem/ConnectionModifiers.vue'
 import { useEditingStore } from '@/stores/editing'
 import { useGridStore } from '@/stores/grid'
+import { roomImagesStore } from '@/stores/roomimages'
 
 const props = defineProps({
   item: {
@@ -73,6 +75,12 @@ const props = defineProps({
 
 const store = useEditingStore()
 const grid = useGridStore()
+const roomImagesS = roomImagesStore()
+
+
+const roomImages = computed(() => {
+  return roomImagesS.roomImages
+})
 
 const isActive = computed(() => {
   return store.room?.id && store.room?.id === props.item?.id
