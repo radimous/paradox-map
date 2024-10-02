@@ -5,7 +5,7 @@ import { save, get } from '@/util/save'
 export const roomImagesStore = defineStore('roomImages', {
 	state: () => {
 		return {
-			roomImages: false
+			roomImages: get('roomImages') ?? false
 		}
 	},
 	actions: {
@@ -13,9 +13,6 @@ export const roomImagesStore = defineStore('roomImages', {
 			this.roomImages = !this.roomImages
 				save('roomImages', this.roomImages)
 			},
-      getRoomImages() {
-        this.roomImages = get('roomImages') ?? false
-			}
 		}
 	}
 )
