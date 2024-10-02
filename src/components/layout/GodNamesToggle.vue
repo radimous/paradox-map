@@ -40,6 +40,7 @@ const toggle = () => {
   &:hover {
     transform: scale(1.2);
   }
+  user-select: none;
   /* border: red 1px solid; */
 }
 </style>
