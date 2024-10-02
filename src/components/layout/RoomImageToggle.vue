@@ -28,14 +28,13 @@
   </svg>
 </template>
 <script setup>
-import { ref, defineExpose } from 'vue'
-// import { enable as enableDarkMode, disable as disableDarkMode } from 'darkreader'
-import { save, get } from '@/util/save'
 import { roomImagesStore } from '@/stores/roomimages'
+import { computed } from 'vue'
 
 const ris = roomImagesStore()
-const roomImages = ref(ris.roomImages)
-
+const roomImages = computed(() => {
+  return ris.roomImages
+})
 const toggle = () => {
   ris.toggleRoomImages()
 }
