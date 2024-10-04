@@ -27,7 +27,7 @@
         as="a"
         target="_blank"
         class="menu-item"
-        href="https://github.com/jbreneman/paradox-map"
+        href="https://github.com/radimous/paradox-map"
         >View on Github
       </MenuItem>
     </MenuItems>
