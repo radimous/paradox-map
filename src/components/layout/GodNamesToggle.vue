@@ -9,6 +9,10 @@
     stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
+    v-tooltip="{
+      content: godNames ? 'Show god names' : 'Hide god names',
+      theme: 'info-tooltip'
+    }"
   >
     <text x="2" y="20" font-size="24" font-family="sans-serif" fill="black">G</text>
     <g v-if="!godNames">

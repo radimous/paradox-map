@@ -192,11 +192,11 @@ const modifiers = computed(() => {
 .empty,
 .none {
   border: none;
-  opacity: 1;
+  opacity: var(--mode-opacity);
 }
 
 .not-purchased:not(.none) {
-  opacity: 0.5;
+  opacity: calc(min(0.5,var(--mode-opacity)));
   border-style: dotted;
 }
 

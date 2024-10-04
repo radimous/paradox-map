@@ -9,6 +9,10 @@
     stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
+    v-tooltip="{
+      content: roomImages ? 'Room type images' : 'Room type text',
+      theme: 'info-tooltip'
+    }"
   >
     <g v-if="roomImages" class="imageMode">
         <!-- Frame of the image -->

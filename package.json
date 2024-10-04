@@ -16,6 +16,7 @@
     "@headlessui/vue": "^1.7.17",
     "darkreader": "^4.9.75",
     "deepmerge": "^4.3.1",
+    "floating-vue": "^5.2.2",
     "nanoid": "^5.0.4",
     "panzoom": "^9.4.3",
     "pinia": "^2.1.7",

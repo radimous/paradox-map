@@ -9,6 +9,10 @@
     stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
+    v-tooltip="{
+      content: isDarkMode ? 'Dark Theme' : 'Light Theme',
+      theme: 'info-tooltip'
+    }"
   >
     <g v-if="isDarkMode" class="moon">
       <path d="M21 12.79A9 9 0 1 1 11.21 3 4.5 4.5 0 0 0 21 12.79z"></path>

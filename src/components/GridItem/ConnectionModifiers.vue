@@ -31,6 +31,7 @@ const modifiers = computed(() => {
 
 <style scoped>
 .connection-modifiers {
+  opacity: var(--mode-opacity);
   --spacing: var(--spacing-100);
   position: absolute;
   z-index: 3;
