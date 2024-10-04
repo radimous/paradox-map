@@ -33,7 +33,7 @@
   const toggle = () => {
     gridOpts.toggleRunMode()
   }
-  document?.querySelector(':root')?.style?.setProperty('--mode-opacity', runMode ? 0 : 1)
+  document?.querySelector(':root')?.style?.setProperty('--mode-opacity', runMode.value ? 0 : 1)
 
   </script>
   <style scoped>
