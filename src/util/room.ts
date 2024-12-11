@@ -32,7 +32,11 @@ export const ROOM_TYPES = {
   VILLAGE: 'village',
   ORE: 'ore',
   COMMON: 'common',
-  PORTAL: 'portal'
+  PORTAL: 'portal',
+  GARDEN: 'garden',
+  PLAYZONE: 'playzone',
+  ARCADE: 'arcade',
+  PIRATE_CAVE: 'pirate_cave'
 } as const
 
 export const ROOM_LABELS = {
@@ -52,7 +56,11 @@ export const ROOM_LABELS = {
   [ROOM_TYPES.VILLAGE]: 'Village',
   [ROOM_TYPES.ORE]: 'Ore',
   [ROOM_TYPES.COMMON]: 'Common',
-  [ROOM_TYPES.PORTAL]: 'Portal'
+  [ROOM_TYPES.PORTAL]: 'Portal',
+  [ROOM_TYPES.GARDEN]: 'Woldian garden'
+  [ROOM_TYPES.PLAYZONE]: 'Playzone'
+  [ROOM_TYPES.ARCADE]: 'Arcade'
+  [ROOM_TYPES.PIRATE_CAVE]: 'Pirate Cave'
 } as const
 
 export const OMEGA_ROOMS = [
@@ -63,7 +71,10 @@ export const OMEGA_ROOMS = [
   ROOM_TYPES.MUSH_ROOM,
   ROOM_TYPES.PAINTING,
   ROOM_TYPES.VENDOR,
-  ROOM_TYPES.DIGSITE
+  ROOM_TYPES.DIGSITE,
+  ROOM_TYPES.GARDEN,
+  ROOM_TYPES.PLAYZONE,
+  ROOM_TYPES.ARCADE
 ]
 
 export const CHALLENGE_ROOMS = [
@@ -72,8 +83,18 @@ export const CHALLENGE_ROOMS = [
   ROOM_TYPES.X_MARK,
   ROOM_TYPES.WILD_WEST,
   ROOM_TYPES.FACTORY,
-  ROOM_TYPES.VILLAGE
+  ROOM_TYPES.VILLAGE,
+  ROOM_TYPES.PIRATE_CAVE
 ]
+
+export const WOLDS = [
+  ROOM_TYPES.GARDEN,
+  ROOM_TYPES.PLAYZONE,
+  ROOM_TYPES.ARCADE,
+  ROOM_TYPES.PIRATE_CAVE
+]
+
+
 
 export type Direction = 'north' | 'south' | 'east' | 'west'
 export interface Room {
