@@ -57,9 +57,9 @@ export const ROOM_LABELS = {
   [ROOM_TYPES.ORE]: 'Ore',
   [ROOM_TYPES.COMMON]: 'Common',
   [ROOM_TYPES.PORTAL]: 'Portal',
-  [ROOM_TYPES.GARDEN]: 'Woldian garden'
-  [ROOM_TYPES.PLAYZONE]: 'Playzone'
-  [ROOM_TYPES.ARCADE]: 'Arcade'
+  [ROOM_TYPES.GARDEN]: 'Woldian garden',
+  [ROOM_TYPES.PLAYZONE]: 'Playzone',
+  [ROOM_TYPES.ARCADE]: 'Arcade',
   [ROOM_TYPES.PIRATE_CAVE]: 'Pirate Cave'
 } as const
 
