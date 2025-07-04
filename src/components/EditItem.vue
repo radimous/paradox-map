@@ -43,6 +43,8 @@
         :room-type="store.room?.type"
         :modifiers="store.room?.modifiers ?? newModifier"
         :potential-modifiers="store.room?.potentialModifiers ?? newPotentialModifiers"
+        :room="store.room"
+        :grid="grid"
         @update="updateModifiers"
       />
       <footer class="footer divider">

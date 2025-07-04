@@ -25,10 +25,13 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, watch, onMounted } from 'vue'
 import BaseButton from '@/components/base/BaseButton.vue'
 import ModifierInput from './ModifierInput.vue'
 
+import {
+  getAdjacentItem
+} from '@/util/grid'
 const props = defineProps({
   modifiers: {
     type: Array,
@@ -45,6 +48,14 @@ const props = defineProps({
   purchased: {
     type: Boolean,
     required: false
+  },
+  room: {
+    type: Object,
+    required: false
+  },
+  grid: {
+    type: Object,
+    required: false
   }
 })
 const emit = defineEmits(['update'])
@@ -59,6 +70,29 @@ const directions = [
 
 const updateDirection = (value) => {
   activeDirection.value = value
+}
+
+const bestDir = () => {
+  let dirsWithoutModifiers = Object.keys(props.potentialModifiers).filter(
+    (dir) => {
+      if (props.potentialModifiers[dir].length === 0) {
+        return true;
+      }
+      for (let i = 0; i < props.potentialModifiers[dir].length; i++) {
+        if (props.potentialModifiers[dir][i].type !== '') {
+          return false;
+        }
+      }
+      const adjacentItem = getAdjacentItem(props.grid.grid, props.room, dir)
+      if (!adjacentItem || !adjacentItem.purchased) {
+        return false;
+      }
+      return true;
+    }          
+  )
+  if (dirsWithoutModifiers.length > 0) {
+    activeDirection.value = dirsWithoutModifiers[0]
+  }
 }
 
 const activeModifiers = computed(() => {
@@ -137,6 +171,18 @@ const canAdd = computed(() => {
     }, 0) < 5
   )
 })
+
+watch(() => props.room, (newRoom, oldRoom) => {
+  if (!newRoom) {
+    return
+  }
+  bestDir()
+})
+
+onMounted(() => {
+  bestDir()
+})
+
 </script>
 
 <style scoped>
