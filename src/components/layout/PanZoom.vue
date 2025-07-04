@@ -27,7 +27,6 @@ onMounted(() => {
   })
   loadTransform();
   periodicallySaveTransform();
-  console.log(instance)
 })
 
 const setTransform = (transform) => {

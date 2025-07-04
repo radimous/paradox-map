@@ -20,22 +20,17 @@
             </option>
           </select>
         </label>
-        <label class="field">
           <span class="label"> God </span>
-          <select @input="updateStyle" class="select">
-            <option value="none" :selected="['none', ''].includes(store.room?.style ?? '')">
-              None
-            </option>
-            <option
+          <div class="button-group">
+            <BaseButton
               v-for="item in styles"
               :key="item.value"
-              :value="item.value"
-              :selected="store.room?.style === item.value"
+              :class="{ active: store.room?.style === item.value }"
+              @click="updateStyle(item.value)"
             >
               {{ item.label }}
-            </option>
-          </select>
-        </label>
+            </BaseButton>
+          </div>
       </div>
       <RoomModifiers
         class="modifiers divider"
@@ -101,7 +96,7 @@ const styles = Object.values(GODS)
   })
 
 const updateStyle = (e) => {
-  store.modifyRoom({ style: e.target.value })
+  store.modifyRoom({ style: e })
 }
 
 const remove = () => {
@@ -225,5 +220,22 @@ const updateModifiers = (value) => {
   padding: var(--spacing-100) var(--spacing-200);
   font-size: 0.875rem;
   cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  gap: var(--spacing-100);
+
+  > * {
+    flex-grow: 1;
+    font-size: smaller;
+  }
+
+  .active {
+    color: black;
+    background: white;
+    border-color: white;
+    filter: grayscale(1) invert(1);
+  }
 }
 </style>
