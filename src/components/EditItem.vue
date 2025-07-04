@@ -20,17 +20,18 @@
             </option>
           </select>
         </label>
-          <span class="label"> God </span>
-          <div class="button-group">
-            <BaseButton
-              v-for="item in styles"
-              :key="item.value"
-              :class="{ active: store.room?.style === item.value }"
-              @click="updateStyle(item.value)"
-            >
-              {{ item.label }}
-            </BaseButton>
-          </div>
+        <span class="label"> God </span>
+        <div class="button-group">
+          <BaseButton
+            v-for="item in styles"
+            :key="item.value"
+            :class="{ active: store.room?.style === item.value }"
+            :style="{ 'outline': `1px solid`, 'outline-color' : `var(--${item.value})`, 'border-color': `var(--${item.value})`}"
+            @click="updateStyle(item.value)"
+          >
+            {{ item.label }}
+          </BaseButton>
+        </div>
       </div>
       <RoomModifiers
         class="modifiers divider"
@@ -232,10 +233,11 @@ const updateModifiers = (value) => {
   }
 
   .active {
-    color: black;
-    background: white;
-    border-color: white;
-    filter: grayscale(1) invert(1);
+    color: white;
+    background: black;
+    &:hover {
+      filter: none;
+    }
   }
 }
 </style>
