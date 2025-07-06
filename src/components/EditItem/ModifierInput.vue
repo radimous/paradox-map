@@ -34,10 +34,6 @@ const props = defineProps({
   roomType: {
     type: String,
     required: false
-  },
-  canRemove: {
-    type: Boolean,
-    default: false
   }
 })
 
@@ -70,6 +66,10 @@ const updateAmount = (e) => {
     amount: +e.target.value
   })
 }
+
+const canRemove = computed(() => {
+  return props.modifier.type !== '' && props.modifier.amount > 0
+})
 
 const remove = () => {
   emit('remove')

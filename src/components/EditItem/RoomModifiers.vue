@@ -15,7 +15,6 @@
       v-for="(modifier, index) in activeModifiers"
       :modifier="modifier"
       :room-type="roomType"
-      :can-remove="modifiers.length > 1"
       :key="index"
       @update="(value) => update(index, value)"
       @remove="() => remove(index)"
