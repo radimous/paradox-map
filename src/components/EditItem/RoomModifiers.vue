@@ -27,6 +27,7 @@
 import { computed, ref, watch, onMounted } from 'vue'
 import BaseButton from '@/components/base/BaseButton.vue'
 import ModifierInput from './ModifierInput.vue'
+import { ROOM_TYPES } from '@/util/room'
 
 import {
   getAdjacentItem
@@ -83,7 +84,7 @@ const bestDir = () => {
         }
       }
       const adjacentItem = getAdjacentItem(props.grid.grid, props.room, dir)
-      if (!adjacentItem || !adjacentItem.purchased) {
+      if (!adjacentItem || (!adjacentItem.purchased && adjacentItem.type !== ROOM_TYPES.PORTAL)) {
         return false;
       }
       return true;
