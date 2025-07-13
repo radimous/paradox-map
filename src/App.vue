@@ -2,6 +2,7 @@
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppGrid from '@/components/AppGrid.vue'
 import EditItem from '@/components/EditItem.vue'
+import PurchasedInfo from '@/components/PurchasedInfo.vue'
 import { useGridStore } from '@/stores/grid'
 import { useVaultsStore } from '@/stores/vaults'
 
@@ -17,6 +18,7 @@ vaults.init()
   <main class="app-canvas">
     <AppGrid />
     <EditItem class="edit-item" />
+    <PurchasedInfo class="purchased-info" />
   </main>
 </template>
 
@@ -35,5 +37,11 @@ vaults.init()
   position: absolute;
   bottom: var(--spacing-400);
   right: var(--spacing-400);
+}
+
+.purchased-info {
+  position: absolute;
+  bottom: var(--spacing-400);
+  left: var(--spacing-400);
 }
 </style>

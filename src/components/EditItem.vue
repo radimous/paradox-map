@@ -123,7 +123,7 @@ const updateModifiers = (value) => {
 
 .edit-item {
   padding: var(--spacing-400);
-  background: white;
+  background: #fffc;
   border-radius: 4px;
   box-shadow: 0 0 4px rgb(0 0 0 / 0.1);
   width: 280px;
