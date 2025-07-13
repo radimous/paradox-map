@@ -43,9 +43,11 @@ const modifiers = computed(() => {
   const positive = Object.values(POSITIVE_MODIFIERS).map((name) => {
     return { label: MODIFIER_LABELS[name], value: name, type: 'positive' }
   })
+  .sort((a, b) => a.label.localeCompare(b.label))
   const negative = Object.values(NEGATIVE_MODIFIERS).map((name) => {
     return { label: MODIFIER_LABELS[name], value: name, type: 'negative' }
   })
+  .sort((a, b) => a.label.localeCompare(b.label))
 
   if (props.roomType === 'common') {
     return positive
