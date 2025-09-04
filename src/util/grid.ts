@@ -57,7 +57,7 @@ const getDelta = (grid: Grid, item: Room, anchor: Room) => {
 }
 
 export const createGrid = () => {
-  const size = 27
+  const size = 39
   return Array(size).fill(createRow(size))
 }
 

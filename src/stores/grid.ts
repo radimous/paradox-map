@@ -35,8 +35,8 @@ export const useGridStore = defineStore('grid', {
     createGrid() {
       const grid = createGrid()
       this.grid = placeItem(grid, createRoom({ style: 'portal', type: 'portal' }), {
-        x: 13,
-        y: 13
+        x: 19,
+        y: 19
       })
       this.id = id()
       this.name = 'My vault'
